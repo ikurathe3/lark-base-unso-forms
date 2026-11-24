@@ -1,0 +1,64 @@
+/* 帳票（A4縦）。寸法はすべて mm / pt で指定 */
+@page { size: A4 portrait; margin: 0; }
+
+.page {
+  width: 210mm; height: 297mm; box-sizing: border-box; padding: 12mm 15mm 10mm;
+  background: #fff; color: #000; position: relative; overflow: hidden;
+  font-family: "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", Meiryo, sans-serif;
+  font-size: 10pt; line-height: 1.35;
+  page-break-after: always; break-after: page;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+.page .betsuki { text-align: right; font-size: 9.5pt; }
+.page h1 { text-align: center; font-size: 17pt; font-weight: 700; letter-spacing: .1em; margin: 3mm 0 6mm; }
+.page table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.page th, .page td { border: .6pt solid #000; vertical-align: middle; }
+.page th { background: #e3e3e3; font-weight: 700; font-size: 9.5pt; text-align: center; padding: 1.5mm 1mm; }
+.page td { padding: 2mm 3mm; }
+
+.page .val { font-family: inherit; }
+.page .line { display: inline-block; border-bottom: .6pt solid #000; min-height: 1.3em; vertical-align: bottom; padding: 0 1mm; box-sizing: border-box; overflow: hidden; white-space: nowrap; text-overflow: clip; }
+.page .w60 { width: 92mm; } .page .w30 { width: 34mm; } .page .grow { flex: 1; }
+.page .num { text-align: right; }
+.page .kv { display: flex; align-items: flex-end; gap: 1mm; margin: 1.6mm 0; }
+.page .kv .k { white-space: nowrap; }
+.page .kv .sp { margin-left: 6mm; }
+.page .pt { display: flex; align-items: flex-end; margin: .8mm 0; }
+.page .pt .tag { width: 13mm; white-space: nowrap; }
+.page .pt .k { white-space: nowrap; width: 16mm; }
+.page .pt .line { flex: 1; }
+.page .gap { height: 2.5mm; }
+.page.acceptance table.form td { padding: 3mm 3mm; }
+.page.acceptance .pt { margin: 1.4mm 0; }
+.page.acceptance .gap { height: 4mm; }
+.page .dt { white-space: nowrap; }
+.page .dt .n { display: inline-block; min-width: 8mm; text-align: center; font-weight: 400; }
+.page .dt .wd b { display: inline-block; min-width: 4mm; text-align: center; font-weight: 400; }
+.page .big { font-size: 12pt; }
+
+.page .methods .cbrow { display: grid; grid-template-columns: 34mm 34mm 1fr; margin: 1.2mm 0; }
+.page .methods .cb { white-space: nowrap; }
+.page .methods .cb.span2 { grid-column: span 2; }
+.page .cb .note { display: inline-block; min-width: 24mm; border-bottom: .6pt solid #000; text-align: center; }
+
+.page .declare { margin: 4mm 0 1mm 2mm; }
+.page .issue { margin: 1mm 0 4mm 30mm; }
+.page table.contractor { width: 112mm; margin-left: auto; }
+.page table.contractor th.head { text-align: left; padding-left: 2mm; }
+.page table.contractor td { padding: 1.5mm 2mm; font-size: 9.5pt; height: 6mm; }
+
+/* 運行指示書 */
+.page.instruction h1 { margin-bottom: 5mm; }
+.page table.head-table { margin-bottom: 6mm; }
+.page table.head-table td { height: 8mm; padding: 1mm 2mm; }
+.page.instruction tr.tall td { height: 11mm; }
+.page .safety .sub { font-size: 9.5pt; margin-bottom: 1mm; }
+.page .safety .memo { border-top: .6pt solid #000; margin: 2.5mm -3mm -2mm; padding: 2mm 3mm; min-height: 22mm; }
+.page .safety .memo-body { white-space: normal; font-size: 9.5pt; }
+.page .confirm-title { font-weight: 700; margin: 5mm 0 1.5mm; }
+.page table.confirm tr.stamp td { height: 13mm; text-align: center; }
+.page table.confirm td { padding: 1.5mm 2mm; font-size: 9pt; }
+.page table.confirm .dt .n { min-width: 5.5mm; }
+
+.page .line.s { font-size: 8.5pt; }
+.page .line.xs { font-size: 7pt; white-space: normal; line-height: 1.2; }

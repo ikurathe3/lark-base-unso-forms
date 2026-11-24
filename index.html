@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>運送引受書・運行指示書</title>
+</head>
+<body>
+  <div id="app" class="ui">
+    <header>
+      <h2>運送引受書・運行指示書</h2>
+      <span id="mode" class="badge"></span>
+    </header>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="print" aria-selected="true">印刷</button>
+      <button role="tab" data-tab="settings" aria-selected="false">設定</button>
+    </nav>
+
+    <section id="tab-print" class="tab">
+      <div class="row">
+        <label>対象</label>
+        <select id="target">
+          <option value="selected">選択中の行（チェックした行）</option>
+          <option value="view">表示中のビューの全件</option>
+          <option value="pick">一覧から選んで指定</option>
+        </select>
+      </div>
+      <div class="row">
+        <label>書類</label>
+        <span class="inline">
+          <label><input type="checkbox" id="docA" checked> 運送引受書</label>
+          <label><input type="checkbox" id="docI" checked> 運行指示書</label>
+        </span>
+      </div>
+      <div class="row">
+        <label>並び順</label>
+        <select id="order">
+          <option value="record">運行ごと（引受書→指示書）</option>
+          <option value="doc">書類ごと（引受書をまとめて→指示書）</option>
+        </select>
+      </div>
+      <div class="actions">
+        <button id="load" class="primary">読み込んでプレビュー</button>
+        <button id="print" disabled>印刷・PDF保存</button>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <ul id="warnings" class="warnings"></ul>
+    </section>
+
+    <section id="tab-settings" class="tab" hidden>
+      <div id="settings-form"></div>
+      <div class="actions sticky">
+        <button id="save" class="primary">設定を保存</button>
+        <span id="save-status" class="status"></span>
+      </div>
+    </section>
+  </div>
+  <div id="preview" class="preview"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

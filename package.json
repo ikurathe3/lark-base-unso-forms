@@ -1,0 +1,20 @@
+{
+  "name": "lark-base-unso-forms",
+  "version": "0.1.0",
+  "description": "Lark Base 拡張機能：レコードから運送引受書（別記1）・運行指示書（別記2）をA4で一括印刷・PDF保存",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test test/*.test.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.4.21"
+  },
+  "dependencies": {
+    "@lark-base-open/js-sdk": "^1.0.2"
+  },
+  "private": true,
+  "type": "module"
+}
